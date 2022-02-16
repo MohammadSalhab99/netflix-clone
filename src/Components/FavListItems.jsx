@@ -9,7 +9,7 @@ function FavListItems(props){
                 (props.favoriteList ?? []).map(movie => {
                     return (
                         <Card key={movie.idDrink}>
-                            <Card.Img variant="top" src={meme.strDrinkThumb} />
+                            <Card.Img variant="top" src={movie.strDrinkThumb} />
                             <Card.Body>
                                 <Card.Title>{movie.title}</Card.Title>
                                 <Card.Text>
