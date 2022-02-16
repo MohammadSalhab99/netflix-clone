@@ -10,7 +10,7 @@ function ModalMovie(props) {
         const userCaption = commentRef.current.value;
         ;
         const newData = { ...props.Movie, userCaption };
-        props.updateCaptions(newData, props.movie.id);
+        props.updateCaptions(newData, props.movie.idDrink);
         console.log(1111111111,props.movie)
     }
 
