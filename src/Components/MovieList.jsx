@@ -11,8 +11,8 @@ function MovieList(props) {
     <CardGroup>
         {props.movies.map((movie) =>{
         return (
-            <div key={movie.id}>
-             <Card key={movie.id} >
+            <div key={movie.idDrink}>
+             <Card key={movie.idDrink} >
                 <Card.Img variant='top' src={movie.strDrinkThumb}/>
                 <Card.Body>
                   <Card.Title>{movie.strDrink}</Card.Title>

@@ -20,11 +20,11 @@ const fetchData = async () =>{
 }
 const updateCaptions= (data, id)=> {
     let updatedMovies = movies.map(movie => {
-        if (movie.id == id) {
+        if (movie.idDrink == id) {
             movie.caption = data.userCaption;
             return movie;
         }
-        else return movie
+        else return movie;
     })
     setMovies(updatedMovies);
 }
