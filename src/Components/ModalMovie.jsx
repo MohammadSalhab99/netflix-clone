@@ -14,6 +14,33 @@ function ModalMovie(props) {
         console.log(1111111111,props.movie)
     }
 
+    async function addToFavorite(movie){
+        try{
+            const res = await fetch(`${process.env.REACT_APP_SERVER}/addMovie`, {
+                method: "POST",
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    title : movie.strDrink,
+                    image : movie.strDrinkThumb,
+                    comment : movie.caption,
+
+                })
+                
+
+            })
+            const data = await res.json();
+
+
+
+
+        } catch (error) {
+            console.log("error", error);
+        }
+    }
+
     return (
         <>
             <Modal show={props.show} onHide={() => { props.handleColse() }}>
@@ -35,6 +62,11 @@ function ModalMovie(props) {
                     <Button className="addBtn" variant="primary" type="submit" onClick={handleCaption}  >
                         Add a Caption
                     </Button>
+                    <Button variant="primary" onClick={()=> addToFavorite(props.movie)} >
+                        add to fav
+                    </Button>
+
+
                     <Button variant="primary" onClick={props.handleColse}>
                         Close
                     </Button>

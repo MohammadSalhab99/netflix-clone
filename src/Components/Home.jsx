@@ -24,7 +24,7 @@ const updateCaptions= (data, id)=> {
             movie.caption = data.userCaption;
             return movie;
         }
-        else return movie
+        else return movie;
     })
     setMovies(updatedMovies);
 }
